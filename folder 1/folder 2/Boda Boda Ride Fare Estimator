@@ -1,1 +1,20 @@
+function calculateBodaFare(distanceInKm) {
+  const baseFare = 50;        // Base fare in KES
+  const chargePerKm = 15;     // Per kilometer charge in KES
+
+  const totalFare = baseFare + (distanceInKm * chargePerKm);
+
+  console.log(`Estimated Boda Boda Fare for ${distanceInKm} km: KES ${totalFare}`);
+}
+
+// Prompt user for distance
+const userInput = prompt("Enter the distance of your trip in kilometers:");
+const distanceInKm = Number(userInput);
+
+// Validate input and call the function
+if (!isNaN(distanceInKm) && distanceInKm > 0) {
+  calculateBodaFare(distanceInKm);
+} else {
+  console.log("Please enter a valid positive number for the distance.");
+}
 

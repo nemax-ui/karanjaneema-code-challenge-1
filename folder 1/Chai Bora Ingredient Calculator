@@ -1,1 +1,32 @@
+function calculateChaiIngredients(numberOfCups) {
+  // Standard amounts per cup
+  const waterPerCup = 200; // in ml
+  const milkPerCup = 50;   // in ml
+  const teaLeavesPerCup = 1; // in tablespoons
+  const sugarPerCup = 2;     // in teaspoons
+
+  // Total amounts
+  const totalWater = waterPerCup * numberOfCups;
+  const totalMilk = milkPerCup * numberOfCups;
+  const totalTeaLeaves = teaLeavesPerCup * numberOfCups;
+  const totalSugar = sugarPerCup * numberOfCups;
+
+  // Display the result
+  console.log(`To make ${numberOfCups} cup(s) of Kenyan chai, you will need:`);
+  console.log(`- Water: ${totalWater} ml`);
+  console.log(`- Milk: ${totalMilk} ml`);
+  console.log(`- Tea Leaves (Majani): ${totalTeaLeaves} tablespoon(s)`);
+  console.log(`- Sugar (Sukari): ${totalSugar} teaspoon(s)`);
+}
+
+// Prompt the user for number of cups
+const userInput = prompt("Enter the number of cups of chai you want to make:");
+const numberOfCups = Number(userInput);
+
+// Validate input and call the function
+if (!isNaN(numberOfCups) && numberOfCups > 0) {
+  calculateChaiIngredients(numberOfCups);
+} else {
+  console.log("Please enter a valid positive number for the cups of chai.");
+}
 
